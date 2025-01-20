@@ -1,0 +1,65 @@
+<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+    <div class="container">
+        <!-- <a class="navbar-brand" href="index.html">market<span>.</span></a> -->
+        <a class="navbar-brand" href="index.html">
+          market<span *ngIf="!isAdminRoute()">.</span><span *ngIf="isAdminRoute()"> Admin</span>
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+<!--      
+        <div class="collapse navbar-collapse" id="navbarsFurni">
+            <ul class="hover-nav navbar-nav ms-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a  *ngIf="!isAdminRoute()" class="nav-link" routerLink="product" routerLinkActive="active-link" aria-current="page">product</a>
+              </li>
+              <li class="nav-item">
+                <a *ngIf="!isAdminRoute()"  class="nav-link" routerLink="cart" routerLinkActive="active-link" >cart</a>
+                </li>
+                <li class="nav-item">
+                  <a *ngIf="isAdminRoute()" class="nav-link" routerLink="Admin" routerLinkActive="active-link" aria-current="page">product</a>
+                </li>
+                <li class="nav-item">
+                  <a  class="nav-link" routerLink="cart-Admin" routerLinkActive="active-link" >cart</a>
+                  </li>
+                  <li class="nav-item">
+                    <a *ngIf="isAdminRoute()" class="nav-link" routerLink="salse-Admin" routerLinkActive="active-link" >salse</a>
+                    </li>
+              
+            
+            </ul>
+        
+          </div> -->
+          
+          <div class="collapse navbar-collapse" id="navbarsFurni">
+            <ul class="hover-nav navbar-nav ms-auto mb-2 mb-md-0">
+              <!-- روابط المنتج والعربة إذا لم يكن المسار '/admin' -->
+              <li class="nav-item">
+                <a *ngIf="!isAdminRoute()" class="nav-link" routerLink="product" routerLinkActive="active-link" aria-current="page">product</a>
+              </li>
+              <li class="nav-item">
+                <a *ngIf="!isAdminRoute()" class="nav-link" routerLink="cart" routerLinkActive="active-link">cart</a>
+              </li>
+          
+              <!-- روابط خاصة بالإدارة إذا كان المسار يحتوي على '/admin' -->
+              <li class="nav-item">
+                <a *ngIf="isAdminRoute()" class="nav-link" routerLink="admin" routerLinkActive="active-link" aria-current="page">product</a>
+              </li>
+              <li class="nav-item">
+                <a *ngIf="isAdminRoute()" class="nav-link" routerLink="cart-Admin" routerLinkActive="active-link">cart</a>
+              </li>
+              <li class="nav-item">
+                <a *ngIf="isAdminRoute()" class="nav-link" routerLink="salse-Admin" routerLinkActive="active-link">sales</a>
+              </li>
+            </ul>
+          </div>
+          
+
+
+
+
+    </div>   
+</nav>
